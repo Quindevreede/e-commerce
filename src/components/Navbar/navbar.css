@@ -53,6 +53,38 @@
     margin-left: 20px;
 }
 
+.navbar-links__container p:hover {
+    color: orange;
+}
+
+.navbar--cart img {
+    width: 25px;
+    margin-left: 20px;
+}
+
+.total--items {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    background-color: darkorange;
+    color: white;
+    border-radius: 50%;
+}
+
+.total--items p {
+    font-size: 12px;
+    font-weight: bolder;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 1.5px;
+    right: 1.5px;
+    color: white;
+    border-radius: 50%;
+}
+
 .navbar-menu-top__container {
     display: flex;
 }
@@ -69,18 +101,52 @@
     flex-direction: column;
     text-align: end;
     background-color: antiquewhite;
-    padding: 8px;
-    margin-right: 20px;
+    padding: 8px 10px 10px 10px;
     position: absolute;
     right: 0;
-    top: 30px;
+    top: 45px;
     margin-top: 5px;
     border-radius: 5px;
-    box-shadow: 0 10px 15px grey;
+    box-shadow: 0 10px 15px black;
+}
+
+.navbar-menu-links__container p {
+    padding: 6px 10px;
+    margin-top: -5px;
+    border-radius: 7px;
 }
 
 .navbar-menu-links__container p:hover {
-    background-color: deeppink;
+    background-color: orange;
+    color:white;
+}
+
+.navbar--cart-small img {
+    position: relative;
+    width: 25px;
+    margin: 0 20px 0 0;
+}
+
+.total--items-small {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    background-color: darkorange;
+    color: white;
+    border-radius: 50%;
+}
+
+.total--items-small p {
+    font-weight: bolder;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -1px;
+    right: 1%;
+    color: white;
+    border-radius: 50%;
 }
 
 .scale-up-center {
@@ -118,7 +184,15 @@
     .navbar-links__container {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         padding: 0 40px 0 0;
+    }
+
+    .navbar-links__container a{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 10px;
     }
 
     .navbar-menu-top__container {

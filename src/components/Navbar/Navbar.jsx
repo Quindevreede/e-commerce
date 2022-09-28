@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import { RiMenu3Line, RiCloseLine} from "react-icons/ri";
 import './navbar.css';
 import '../../assets/logoQ.png';
+import cart from '../../assets/kisspng-shopping-cart-online-shopping-empty-cart-5b58927a99a238.8167175715325313226293.png'
+import {NavLink} from "react-router-dom";
 
-function Navbar() {
+function Navbar( { totalItems }) {
     const [toggleMenu, setToggleMenu] = useState(false);
 
     return (
@@ -14,11 +16,20 @@ function Navbar() {
                     <h4>COMMERCE</h4>
                 </div>
                 <div className="navbar-links__container">
-                    <p>HOME</p>
-                    <p>ABOUT</p>
-                    <p>SHOP</p>
-                    <p>SIGN-UP</p>
-                    <p>SIGN-IN</p>
+                    <NavLink to='/'>HOME</NavLink>
+                    <NavLink to='/shop'>SHOP</NavLink>
+                    <NavLink to='/contact'>CONTACT</NavLink>
+                    <div className='navbar--cart'>
+                        <NavLink to="/cart">
+                        <img
+                            src={cart}
+                            alt="example"
+                        />
+                        </NavLink>
+                        <div className='total--items'>
+                            <p>{totalItems}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="navbar-menu-top__container">
@@ -36,6 +47,17 @@ function Navbar() {
                         </div>
                     </div>
                 )}
+                <div className='navbar--cart-small'>
+                    {/*<Link to="/cart">*/}
+                    <img
+                        src={cart}
+                        alt="example"
+                    />
+                    {/*</Link>*/}
+                    <div className='total--items-small'>
+                        <p>{totalItems}</p>
+                    </div>
+                </div>
             </div>
         </div>
     );
