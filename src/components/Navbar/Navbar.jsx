@@ -3,10 +3,11 @@ import { RiMenu3Line, RiCloseLine} from "react-icons/ri";
 import './navbar.css';
 import '../../assets/logoQ.png';
 import cart from '../../assets/kisspng-shopping-cart-online-shopping-empty-cart-5b58927a99a238.8167175715325313226293.png'
-import {NavLink} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
 
 function Navbar( { totalItems }) {
     const [toggleMenu, setToggleMenu] = useState(false);
+    const location = useLocation();
 
     return (
         <div className="navbar-top__container sticky">
@@ -16,11 +17,11 @@ function Navbar( { totalItems }) {
                     <h4>COMMERCE</h4>
                 </div>
                 <div className="navbar-links__container">
-                    <NavLink to='/'>HOME</NavLink>
-                    <NavLink to='/shop'>SHOP</NavLink>
-                    <NavLink to='/contact'>CONTACT</NavLink>
+                    <NavLink to='/home' activeclassname="active">HOME</NavLink>
+                    <NavLink to='/shop' activeclassname="active">SHOP</NavLink>
+                    <NavLink to='/contact' activeclassname="active">CONTACT</NavLink>
                     <div className='navbar--cart'>
-                        <NavLink to="/cart">
+                        <NavLink to="/cart" activeclassname="active">
                         <img
                             src={cart}
                             alt="example"

@@ -24,10 +24,22 @@ function App() {
         setCart(item);
     };
 
-    const handleEmptyCart = async () => {
-        const response = await commerce.cart.empty();
+    const handleUpdateCartQty = async (lineItemId, quantity) => {
+        const cart = await commerce.cart.update(lineItemId, { quantity });
 
-        setCart(response);
+        setCart(cart);
+    };
+
+    const handleRemoveFromCart = async (lineItemId) => {
+        const cart = await commerce.cart.remove(lineItemId);
+
+        setCart(cart);
+    };
+
+    const handleEmptyCart = async () => {
+        const cart = await commerce.cart.empty();
+
+        setCart(cart);
     };
 
     useEffect(() => {
@@ -43,10 +55,10 @@ function App() {
             <Navbar totalItems={cart.total_items}/>
 
             <Routes>
-                <Route path='/' element={<Home />} />
+                <Route path='/home' element={<Home />} />
                 <Route path='/shop' element={<Products products={products} onAddToCart={handleAddToCart}/>} />
 
-                <Route path='/cart' element={<Cart cart={cart} onEmptyCart={handleEmptyCart} />} />
+                <Route path='/cart' element={<Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />} />
             </Routes>
         </>
   );

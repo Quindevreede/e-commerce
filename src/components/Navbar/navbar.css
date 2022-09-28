@@ -200,4 +200,12 @@
         position: relative;
     }
 
+    .inactive {
+        color: blue
+    }
+
+    .active {
+        color: deeppink;
+    }
+
 }

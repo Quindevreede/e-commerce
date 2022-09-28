@@ -1,18 +1,24 @@
 import React from "react";
 import './cart.css'
+import { Link } from 'react-router-dom';
 import CartItem from "../CartItem/CartItem";
 
-function Cart( { cart, onEmptyCart } ) {
+function Cart( { cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart } ) {
 
     function handleEmptyCart() {
-        onEmptyCart();
+        return (
+            onEmptyCart()
+        );
     }
 
     function EmptyCart() {
         return (
-        <h3>YOUR CART IS EMPTY, YOU CAN ADD OUR PRODUCTS IN THE "STORE" SECTION</h3>
-        )
-    };
+            <div>
+                <h3>YOUR CART IS EMPTY</h3>
+                <Link to='/shop'>YOU CAN ADD OUR PRODUCTS IN THE "SHOP" SECTION</Link>
+            </div>
+        );
+    }
 
     if (!cart.line_items) return 'Loading';
 
@@ -22,11 +28,12 @@ function Cart( { cart, onEmptyCart } ) {
             <div>
                 {cart.line_items.map((item) => (
                     <div key={item.id}>
-                        <CartItem item={ item }/>
-                        <div>{cart.subtotal.formatted_with_symbol}</div>
+                        <CartItem item={ item } onUpdateCartQty={onUpdateCartQty} onRemoveFromCart={onRemoveFromCart}/>
                     </div>
                 ))}
             </div>
+            <h2>SUBTOTAL =</h2>
+            <div>{cart.subtotal.formatted_with_symbol}</div>
         </>
         );
     }
