@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Route, Routes} from "react-router-dom";
 import './App.css';
-import { Navbar, Home, Products, Cart } from './components';
+import { Navbar, Start, Home, Products, Cart, Checkout, Footer } from './components';
 import { commerce } from './lib/commerce';
 
 function App() {
@@ -52,14 +52,20 @@ function App() {
 
     return (
         <>
+            <div className='app'>
             <Navbar totalItems={cart.total_items}/>
-
+            <div className='main'>
             <Routes>
+                <Route path='/' element={<Start />} />
                 <Route path='/home' element={<Home />} />
                 <Route path='/shop' element={<Products products={products} onAddToCart={handleAddToCart}/>} />
-
                 <Route path='/cart' element={<Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />} />
+                <Route path='/checkout' element={<Checkout cart={cart} onEmptyCart={handleEmptyCart}/>} />
+
             </Routes>
+            </div>
+            </div>
+                <Footer />
         </>
   );
 }

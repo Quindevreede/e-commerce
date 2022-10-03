@@ -1,0 +1,15 @@
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin-top: 20px;
+}
+
+.footer h1 {
+    font-size: 12px;
+    background-color: antiquewhite;
+    color: #12b0d3;
+    border-top: 1px solid darkorange;
+    text-align: center;
+    padding: 10px;
+}

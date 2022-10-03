@@ -1,6 +1,6 @@
 import React from "react";
 import './cart.css'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import CartItem from "../CartItem/CartItem";
 
 function Cart( { cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart } ) {
@@ -46,7 +46,7 @@ function Cart( { cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart } ) {
             <div className='cart-buttons__container'>
                 <div>
                     <button className='emptyButton' type="button" onClick={handleEmptyCart}>Empty cart</button>
-                    <button className='checkoutButton' type="button">Checkout</button>
+                    <NavLink to='/checkout'>Checkout</NavLink>
                 </div>
             </div>
         </section>

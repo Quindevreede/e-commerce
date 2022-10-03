@@ -1,0 +1,83 @@
+.btn {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    border-radius:10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    --btn--navbar: deeppink;
+    --btn--default: deeppink;
+    --btn--start: deeppink;
+    --btn--home: deeppink;
+    --btn--shop: deeppink;
+    --btn--contact: deeppink;
+    --btn--cart: deeppink;
+    --btn--form: deeppink;
+    --button--disabled: dimgrey;
+}
+
+.btn:disabled {
+    background-color: deeppink;
+    color: var(--button--disabled);
+}
+
+.btn--navbar {
+    background: deeppink;
+    background: linear-gradient(129deg, var(--secondary-light)  100%), var(--secondary) 26%, var(--primary) 0% ;
+    border: none;
+    color: black;
+    margin-top: 4px;
+    margin-right: 4px;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.btn--navbar:hover {
+    background-color: purple;
+    transition: 0.7s;
+}
+
+.btn--default {
+    background-color: deeppink;
+    color: white;
+    border: none;
+    margin-top: 10px;
+}
+
+.btn--start {
+    max-width: 150px;
+    background-color: #12b0d3;
+    color: white;
+    border: none;
+    margin-top: 30px;
+    padding: 10px 15px;
+}
+
+.btn--start:hover {
+    background-color: darkorange;
+    transition: 1s;
+}
+
+.btn--small {
+    padding: 10px 15px;
+    font-size: 12px;
+}
+
+.btn--medium {
+    padding: 8px 5px;
+    font-size: 15px;
+}
+
+.btn--large {
+    padding: 8px 5px;
+    font-size: 20px;
+}
+
+.btn--extra-large {
+    padding-right: -50px;
+    font-size: 30px;
+}
+
+

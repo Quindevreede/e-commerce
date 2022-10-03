@@ -4,6 +4,7 @@
     margin: 0;
     scroll-behavior: smooth;
     font-family: 'Manrope', sans-serif;
+    text-decoration: none;
 }
 
 ::-webkit-scrollbar {
@@ -16,6 +17,10 @@ body {
 
 p {
     font-family: "Roboto Light", sans-serif;
+}
+
+a {
+    color: #005ad4;
 }
 
 h1 {
@@ -35,6 +40,7 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 35px;
 }
 
 .inner-content__container {
@@ -48,4 +54,9 @@ h2 {
     justify-content: center;
     text-align: center;
     position: relative;
+}
+
+.app {
+    min-height: calc(92vh - 34px);
+
 }
