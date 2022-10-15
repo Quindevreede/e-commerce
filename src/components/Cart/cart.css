@@ -1,3 +1,38 @@
+.cart-top__container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
 .cart__container {
-    margin-top: 150px;
+    margin-top: 20px;
+}
+
+.empty-cart h3 {
+    color: darkorange;
+    margin-bottom: 10px;
+}
+
+.total--price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.checkout-button {
+    background-color: darkorange;
+    font-size: 30px;
+    padding: 9px;
+    border-radius: 20px;
+}
+
+.checkout-button a {
+    color: white;
+}
+
+@media screen and (min-width: 750px) {
+    .total--price {
+        font-size: 20px;
+    }
 }

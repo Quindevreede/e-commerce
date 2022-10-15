@@ -1,25 +1,25 @@
-import React from "react";
-import "./button.css";
+import React from 'react';
+import './button.css';
 
 const buttonStyles = [
-    "btn--navbar",
-    "btn--default",
-    "btn--start",
-    "btn--home",
-    "btn--shop",
-    "btn--contact",
-    "btn--cart",
-    "btn--form",
+    'btn--start',
+    'btn--home',
+    'btn--shop',
+    'btn--top20',
+    'btn--contact',
+    'btn--cart',
+    'btn--cart-remove',
+    'btn--form',
 ]
 
 const buttonSizes = [
-    "btn--small",
-    "btn--medium",
-    "btn--large",
-    "btn--extra-large"
+    'btn--small',
+    'btn--medium',
+    'btn--large',
+    'btn--extra-large'
 ]
 
-function Button({
+function Button ({
     children,
     type,
     onClick,
@@ -35,7 +35,6 @@ function Button({
     const checkButtonSize = buttonSizes.includes(buttonSize)
         ? buttonSize
         : buttonSizes[0];
-
 
     return (
         <button
